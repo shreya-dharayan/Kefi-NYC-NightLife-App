@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&amp;family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#efece6;font-family:'Inter',system-ui,sans-serif}
+.dv-turn{padding:44px 48px 40px}
+.dv-thd{display:flex;align-items:baseline;gap:10px;margin:0 0 6px}
+.dv-tid{font:700 10px ui-monospace,Menlo,monospace;padding:3px 8px;background:#17101f;color:#f5b545;border-radius:4px;text-decoration:none}
+.dv-tname{font:700 15px/1.2 'Inter',sans-serif;color:#17101f}
+.dv-sub{margin:0 0 26px;font:400 13px/1.5 'Inter',sans-serif;color:rgba(23,16,31,0.55);max-width:640px}
+.dv-opts{display:flex;flex-wrap:wrap;gap:34px;align-items:flex-start}
+.dv-opt{flex:none;display:flex;flex-direction:column;gap:11px;scroll-margin-top:16px}
+.dv-oid{font:700 10.5px ui-monospace,Menlo,monospace;padding:3px 8px;background:rgba(23,16,31,0.08);color:#17101f;border-radius:5px;text-decoration:none}
+.dv-olabel{display:flex;flex-direction:column;gap:2px;font:400 11px/1.3 'Inter',sans-serif;color:rgba(23,16,31,0.5)}
+.dv-oname{font:700 13px/1.3 'Inter',sans-serif;color:#17101f}
+.dv-opt:target .dv-oid{background:#f5b545;color:#1a0f00}
+.dv-next{margin:30px 0 0;font:13px/1.6 'Inter',sans-serif;color:rgba(23,16,31,0.5);max-width:900px}
+.dv-next a{color:#8a4fd6}
+</style>
+</helmet>
+
+<section class="dv-turn" id="t1">
+<div class="dv-thd"><a class="dv-tid" href="#t1">1</a><span class="dv-tname">Kefi &mdash; night-themed app screens</span></div>
+<p class="dv-sub">First pass, hi-fi. Vibe-matching NYC nightlife app: dark plum background, amber "kefi" energy glow, violet accent, Unbounded display type. Quiz and match flow each get 3 interaction variants to compare.</p>
+<div class="dv-opts">
+
+<div class="dv-opt" id="1a">
+<div class="dv-olabel"><a class="dv-oid" href="#1a">1a</a><span class="dv-oname">Onboarding &mdash; welcome</span></div>
+<x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" dark="{{ true }}" hint-size="402px,874px">
+<div style="height:100%;position:relative;overflow:hidden;background:#0a0712;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 32px;box-sizing:border-box">
+<div style="position:absolute;top:-80px;left:-100px;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(245,181,69,0.35),transparent 70%);filter:blur(10px)"></div>
+<div style="position:absolute;bottom:-120px;right:-100px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(168,85,247,0.32),transparent 70%);filter:blur(10px)"></div>
+<div style="position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;text-align:center;gap:22px">
+<div style="font-family:'Unbounded',sans-serif;font-weight:800;font-size:52px;letter-spacing:2px;background:linear-gradient(135deg,#ffd27a,#c9a6ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent">KEFI</div>
+<div style="font-family:'Inter',sans-serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:rgba(246,243,250,0.4)">&kappa;&#941;&phi;&iota; &mdash; a burst of spirited energy</div>
+<div style="font-family:'Unbounded',sans-serif;font-weight:600;font-size:22px;line-height:1.35;color:#f6f3fa;margin-top:8px">Find your night,<br/>not just a venue near you.</div>
+<div style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.5;color:rgba(246,243,250,0.55);max-width:280px">A fast vibe check matches you to NYC spots that fit tonight&rsquo;s mood.</div>
+</div>
+<div style="position:relative;z-index:1;width:100%;margin-top:40px;display:flex;flex-direction:column;gap:14px;align-items:center">
+<div style="width:100%;text-align:center;padding:17px;border-radius:999px;background:linear-gradient(135deg,#f5b545,#ffb020);color:#1a0f00;font-family:'Inter',sans-serif;font-weight:700;font-size:16px;box-shadow:0 0 34px rgba(245,181,69,0.45),0 10px 24px rgba(0,0,0,0.4)">Start the vibe check</div>
+<div style="font-family:'Inter',sans-serif;font-size:13px;color:rgba(246,243,250,0.4)">I already have an account</div>
+</div>
+</div>
+</x-import>
+</div>
+
+<div class="dv-opt" id="1b">
+<div class="dv-olabel"><a class="dv-oid" href="#1b">1b</a><span class="dv-oname">Quiz &mdash; one question per screen</span></div>
+<x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" dark="{{ true }}" hint-size="402px,874px">
+<div style="height:100%;position:relative;overflow:hidden;background:#0a0712;display:flex;flex-direction:column;box-sizing:border-box;font-family:'Inter',sans-serif;color:#f6f3fa">
+<div style="position:absolute;top:-60px;right:-80px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(168,85,247,0.28),transparent 70%);filter:blur(10px)"></div>
+<div style="position:relative;z-index:1;padding:66px 24px 0;display:flex;align-items:center;gap:14px">
+<div style="width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;font-size:16px;color:rgba(246,243,250,0.6)">&larr;</div>
+<div style="flex:1;display:flex;gap:6px">
+<div style="flex:1;height:3px;border-radius:2px;background:#f5b545"></div>
+<div style="flex:1;height:3px;border-radius:2px;background:#f5b545"></div>
+<div style="flex:1;height:3px;border-radius:2px;background:rgba(255,255,255,0.12)"></div>
+<div style="flex:1;height:3px;border-radius:2px;background:rgba(255,255,255,0.12)"></div>
+<div style="flex:1;height:3px;border-radius:2px;background:rgba(255,255,255,0.12)"></div>
+</div>
+<div style="font-size:12px;color:rgba(246,243,250,0.4)">2/5</div>
+</div>
+<div style="position:relative;z-index:1;padding:36px 24px 0">
+<div style="font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#f5b545;margin-bottom:10px">Group tonight</div>
+<div style="font-family:'Unbounded',sans-serif;font-weight:600;font-size:26px;line-height:1.3">Who&rsquo;s coming out with you?</div>
+</div>
+<div style="position:relative;z-index:1;flex:1;padding:28px 24px;display:flex;flex-direction:column;gap:12px">
+<div style="padding:20px;border-radius:18px;background:rgba(255,255,255,0.08);border:1.5px solid #f5b545;box-shadow:0 0 24px rgba(245,181,69,0.25);display:flex;align-items:center;justify-content:space-between"><span style="font-weight:600;font-size:16px">Just me, solo</span><span style="width:22px;height:22px;border-radius:50%;background:#f5b545"></span></div>
+<div style="padding:20px;border-radius:18px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:space-between"><span style="font-size:16px;color:rgba(246,243,250,0.85)">Date night</span><span style="width:22px;height:22px;border-radius:50%;border:1.5px solid rgba(255,255,255,0.2)"></span></div>
+<div style="padding:20px;border-radius:18px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:space-between"><span style="font-size:16px;color:rgba(246,243,250,0.85)">Small crew (2&ndash;4)</span><span style="width:22px;height:22px;border-radius:50%;border:1.5px solid rgba(255,255,255,0.2)"></span></div>
+<div style="padding:20px;border-radius:18px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:space-between"><span style="font-size:16px;color:rgba(246,243,250,0.85)">Big group (5+)</span><span style="width:22px;height:22px;border-radius:50%;border:1.5px solid rgba(255,255,255,0.2)"></span></div>
+</div>
+<div style="position:relative;z-index:1;padding:0 24px 40px">
+<div style="width:100%;text-align:center;padding:17px;border-radius:999px;background:linear-gradient(135deg,#f5b545,#ffb020);color:#1a0f00;font-weight:700;font-size:16px;box-shadow:0 0 30px rgba(245,181,69,0.4)">Next</div>
+</div>
+</div>
+</x-import>
+</div>
+
+<div class="dv-opt" id="1c">
+<div class="dv-olabel"><a class="dv-oid" href="#1c">1c</a><span class="dv-oname">Quiz &mdash; energy dial</span></div>
+<x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" dark="{{ true }}" hint-size="402px,874px">
+<div style="height:100%;position:relative;overflow:hidden;background:#0a0712;display:flex;flex-direction:column;box-sizing:border-box;font-family:'Inter',sans-serif;color:#f6f3fa">
+<div style="position:absolute;top:120px;left:50%;transform:translateX(-50%);width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(245,181,69,0.2),transparent 70%);filter:blur(6px)"></div>
+<div style="position:relative;z-index:1;padding:66px 24px 0;text-align:center">
+<div style="font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#f5b545;margin-bottom:8px">Tonight&rsquo;s energy</div>
+<div style="font-family:'Unbounded',sans-serif;font-weight:600;font-size:22px">How turnt is tonight?</div>
+</div>
+<div style="position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;margin-top:34px">
+<div style="width:250px;height:250px;border-radius:50%;background:conic-gradient(from -90deg,#f5b545 0deg,#f5b545 234deg,rgba(255,255,255,0.08) 234deg,rgba(255,255,255,0.08) 360deg);display:flex;align-items:center;justify-content:center;box-shadow:0 0 50px rgba(245,181,69,0.3)">
+<div style="width:206px;height:206px;border-radius:50%;background:#0d0916;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px">
+<div style="font-family:'Unbounded',sans-serif;font-weight:800;font-size:40px;color:#f5b545">65</div>
+<div style="font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(246,243,250,0.5)">High-Energy</div>
+</div>
+</div>
+</div>
+<div style="position:relative;z-index:1;display:flex;justify-content:space-between;padding:20px 40px 0;font-size:12px;color:rgba(246,243,250,0.4)"><span>Chill</span><span>Turnt up</span></div>
+<div style="position:relative;z-index:1;margin-top:36px;padding:0 24px;display:flex;gap:10px">
+<span style="flex:1;text-align:center;padding:12px 0;border-radius:999px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);font-size:13px">Solo</span>
+<span style="flex:1;text-align:center;padding:12px 0;border-radius:999px;background:rgba(168,85,247,0.18);border:1px solid #a855f7;font-size:13px;color:#c9a6ff">Friends</span>
+<span style="flex:1;text-align:center;padding:12px 0;border-radius:999px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);font-size:13px">Date</span>
+</div>
+<div style="flex:1"></div>
+<div style="position:relative;z-index:1;padding:0 24px 40px">
+<div style="width:100%;text-align:center;padding:17px;border-radius:999px;background:linear-gradient(135deg,#f5b545,#ffb020);color:#1a0f00;font-weight:700;font-size:16px;box-shadow:0 0 30px rgba(245,181,69,0.4)">Find my vibe</div>
+</div>
+</div>
+</x-import>
+</div>
+
+<div class="dv-opt" id="1d">
+<div class="dv-olabel"><a class="dv-oid" href="#1d">1d</a><span class="dv-oname">Quiz &mdash; single scroll form</span></div>
+<x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" dark="{{ true }}" hint-size="402px,874px">
+<div style="height:100%;overflow:auto;background:#0a0712;box-sizing:border-box;font-family:'Inter',sans-serif;color:#f6f3fa">
+<div style="padding:66px 24px 20px">
+<div style="font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#f5b545;margin-bottom:8px">Vibe check</div>
+<div style="font-family:'Unbounded',sans-serif;font-weight:600;font-size:24px">Set tonight&rsquo;s mood</div>
+</div>
+<div style="padding:0 24px;display:flex;flex-direction:column;gap:26px">
+<div>
+<div style="font-size:13px;font-weight:600;margin-bottom:10px;color:rgba(246,243,250,0.85)">Energy level</div>
+<div style="height:8px;border-radius:4px;background:rgba(255,255,255,0.08);position:relative"><div style="position:absolute;left:0;top:0;bottom:0;width:65%;border-radius:4px;background:linear-gradient(90deg,#f5b545,#ffb020)"></div><div style="position:absolute;left:65%;top:-6px;width:20px;height:20px;border-radius:50%;background:#fff;box-shadow:0 0 10px rgba(245,181,69,0.6)"></div></div>
+<div style="display:flex;justify-content:space-between;font-size:11px;color:rgba(246,243,250,0.4);margin-top:6px"><span>Chill</span><span>Turnt up</span></div>
+</div>
+<div>
+<div style="font-size:13px;font-weight:600;margin-bottom:10px;color:rgba(246,243,250,0.85)">Who&rsquo;s coming</div>
+<div style="display:flex;gap:8px;flex-wrap:wrap">
+<span style="padding:9px 16px;border-radius:999px;background:rgba(168,85,247,0.18);border:1px solid #a855f7;font-size:13px;color:#c9a6ff">Friends</span>
+<span style="padding:9px 16px;border-radius:999px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);font-size:13px">Date</span>
+<span style="padding:9px 16px;border-radius:999px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);font-size:13px">Solo</span>
+<span style="padding:9px 16px;border-radius:999px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);font-size:13px">Big group</span>
+</div>
+</div>
+<div>
+<div style="font-size:13px;font-weight:600;margin-bottom:10px;color:rgba(246,243,250,0.85)">Sound &amp; music</div>
+<div style="display:flex;gap:8px;flex-wrap:wrap">
+<span style="padding:9px 16px;border-radius:999px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);font-size:13px">Hip-hop</span>
+<span style="padding:9px 16px;border-radius:999px;background:rgba(245,181,69,0.18);border:1px solid #f5b545;font-size:13px;color:#ffd27a">House / Techno</span>
+<span style="padding:9px 16px;border-radius:999px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);font-size:13px">Live music</span>
+<span style="padding:9px 16px;border-radius:999px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);font-size:13px">Low-key / talk</span>
+</div>
+</div>
+<div>
+<div style="font-size:13px;font-weight:600;margin-bottom:10px;color:rgba(246,243,250,0.85)">Budget</div>
+<div style="display:flex;gap:8px">
+<span style="flex:1;text-align:center;padding:10px 0;border-radius:12px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);font-size:13px">$</span>
+<span style="flex:1;text-align:center;padding:10px 0;border-radius:12px;background:rgba(245,181,69,0.18);border:1px solid #f5b545;font-size:13px;color:#ffd27a">$$</span>
+<span style="flex:1;text-align:center;padding:10px 0;border-radius:12px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);font-size:13px">$$$</span>
+<span style="flex:1;text-align:center;padding:10px 0;border-radius:12px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);font-size:13px">$$$$</span>
+</div>
+</div>
+<div style="display:flex;align-items:center;justify-content:space-between;padding:16px;border-radius:16px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08)">
+<div><div style="font-size:14px;font-weight:600">Surprise me</div><div style="font-size:12px;color:rgba(246,243,250,0.45);margin-top:2px">Add one wildcard pick</div></div>
+<div style="width:44px;height:26px;border-radius:999px;background:#f5b545;position:relative;box-shadow:0 0 12px rgba(245,181,69,0.5)"><div style="position:absolute;right:2px;top:2px;width:22px;height:22px;border-radius:50%;background:#1a0f00"></div></div>
+</div>
+</div>
+<div style="padding:30px 24px 40px">
+<div style="width:100%;text-align:center;padding:17px;border-radius:999px;background:linear-gradient(135deg,#f5b545,#ffb020);color:#1a0f00;font-weight:700;font-size:16px;box-shadow:0 0 30px rgba(245,181,69,0.4)">See my matches</div>
+</div>
+</div>
+</x-import>
+</div>
+
+<div class="dv-opt" id="1e">
+<div class="dv-olabel"><a class="dv-oid" href="#1e">1e</a><span class="dv-oname">Matches &mdash; swipeable stack</span></div>
+<x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" dark="{{ true }}" hint-size="402px,874px">
+<div style="height:100%;position:relative;overflow:hidden;background:#0a0712;box-sizing:border-box;font-family:'Inter',sans-serif;color:#f6f3fa">
+<div style="position:absolute;top:100px;left:36px;right:36px;bottom:130px;border-radius:28px;background:#160f21;border:1px solid rgba(255,255,255,0.06);transform:rotate(-4deg)"></div>
+<div style="position:absolute;top:96px;left:26px;right:26px;bottom:126px;border-radius:28px;background:#1b1327;border:1px solid rgba(255,255,255,0.07);transform:rotate(3deg)"></div>
+<div style="position:absolute;top:90px;left:20px;right:20px;bottom:120px;border-radius:28px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.6)">
+<div style="position:absolute;inset:0;background:repeating-linear-gradient(45deg,#241a30,#241a30 12px,#1b1327 12px,#1b1327 24px)"></div>
+<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;color:rgba(246,243,250,0.3)">venue photo</div>
+<div style="position:absolute;left:0;right:0;bottom:0;height:55%;background:linear-gradient(to top,rgba(10,7,18,0.96),transparent)"></div>
+<div style="position:absolute;top:16px;left:16px;padding:7px 13px;border-radius:999px;background:rgba(245,181,69,0.9);color:#1a0f00;font-weight:800;font-size:13px">94% match</div>
+<div style="position:absolute;left:20px;right:20px;bottom:24px">
+<div style="font-family:'Unbounded',sans-serif;font-weight:600;font-size:22px">Sona</div>
+<div style="font-size:13px;color:rgba(246,243,250,0.6);margin-top:4px">Nightclub &middot; Chelsea &middot; 0.6 mi</div>
+<div style="display:flex;gap:6px;margin-top:12px;flex-wrap:wrap">
+<span style="padding:6px 12px;border-radius:999px;background:rgba(255,255,255,0.1);font-size:11px">Good for dancing</span>
+<span style="padding:6px 12px;border-radius:999px;background:rgba(255,255,255,0.1);font-size:11px">Busy tonight</span>
+</div>
+</div>
+</div>
+<div style="position:absolute;bottom:38px;left:0;right:0;display:flex;justify-content:center;gap:26px">
+<div style="width:58px;height:58px;border-radius:50%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;font-size:22px;color:rgba(246,243,250,0.7)">&times;</div>
+<div style="width:58px;height:58px;border-radius:50%;background:linear-gradient(135deg,#f5b545,#ffb020);display:flex;align-items:center;justify-content:center;font-size:22px;color:#1a0f00;box-shadow:0 0 26px rgba(245,181,69,0.5)">&hearts;</div>
+</div>
+</div>
+</x-import>
+</div>
+
+<div class="dv-opt" id="1f">
+<div class="dv-olabel"><a class="dv-oid" href="#1f">1f</a><span class="dv-oname">Matches &mdash; vertical list</span></div>
+<x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" dark="{{ true }}" hint-size="402px,874px">
+<div style="height:100%;overflow:auto;background:#0a0712;box-sizing:border-box;font-family:'Inter',sans-serif;color:#f6f3fa">
+<div style="padding:66px 24px 16px;display:flex;align-items:center;justify-content:space-between">
+<div><div style="font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#f5b545">Tonight</div><div style="font-family:'Unbounded',sans-serif;font-weight:600;font-size:22px;margin-top:4px">Your matches</div></div>
+<div style="width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;font-size:15px">&#8635;</div>
+</div>
+<div style="padding:6px 24px 30px;display:flex;flex-direction:column;gap:14px">
+
+<div style="display:flex;gap:12px;padding:12px;border-radius:18px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08)">
+<div style="width:76px;height:76px;border-radius:14px;flex-shrink:0;position:relative;overflow:hidden;background:repeating-linear-gradient(45deg,#241a30,#241a30 8px,#1b1327 8px,#1b1327 16px)"></div>
+<div style="flex:1;min-width:0">
+<div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-weight:700;font-size:15px">Sona</span><span style="font-size:12px;font-weight:700;color:#f5b545">94%</span></div>
+<div style="font-size:12px;color:rgba(246,243,250,0.5);margin-top:2px">Nightclub &middot; Chelsea</div>
+<div style="display:flex;gap:6px;margin-top:8px"><span style="padding:4px 10px;border-radius:999px;background:rgba(255,255,255,0.08);font-size:10.5px">Dancing</span><span style="padding:4px 10px;border-radius:999px;background:rgba(245,181,69,0.15);color:#ffd27a;font-size:10.5px">Busy now</span></div>
+</div>
+</div>
+
+<div style="display:flex;gap:12px;padding:12px;border-radius:18px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08)">
+<div style="width:76px;height:76px;border-radius:14px;flex-shrink:0;position:relative;overflow:hidden;background:repeating-linear-gradient(45deg,#241a30,#241a30 8px,#1b1327 8px,#1b1327 16px)"></div>
+<div style="flex:1;min-width:0">
+<div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-weight:700;font-size:15px">Le Bain</span><span style="font-size:12px;font-weight:700;color:#f5b545">89%</span></div>
+<div style="font-size:12px;color:rgba(246,243,250,0.5);margin-top:2px">Rooftop &middot; Meatpacking</div>
+<div style="display:flex;gap:6px;margin-top:8px"><span style="padding:4px 10px;border-radius:999px;background:rgba(255,255,255,0.08);font-size:10.5px">First-date friendly</span><span style="padding:4px 10px;border-radius:999px;background:rgba(255,255,255,0.08);font-size:10.5px">$$$ cover</span></div>
+</div>
+</div>
+
+<div style="display:flex;gap:12px;padding:12px;border-radius:18px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08)">
+<div style="width:76px;height:76px;border-radius:14px;flex-shrink:0;position:relative;overflow:hidden;background:repeating-linear-gradient(45deg,#241a30,#241a30 8px,#1b1327 8px,#1b1327 16px)"></div>
+<div style="flex:1;min-width:0">
+<div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-weight:700;font-size:15px">House of Yes</span><span style="font-size:12px;font-weight:700;color:#f5b545">85%</span></div>
+<div style="font-size:12px;color:rgba(246,243,250,0.5);margin-top:2px">Live venue &middot; Bushwick</div>
+<div style="display:flex;gap:6px;margin-top:8px"><span style="padding:4px 10px;border-radius:999px;background:rgba(255,255,255,0.08);font-size:10.5px">High-energy</span><span style="padding:4px 10px;border-radius:999px;background:rgba(255,255,255,0.08);font-size:10.5px">Line forming</span></div>
+</div>
+</div>
+
+</div>
+</div>
+</x-import>
+</div>
+
+<div class="dv-opt" id="1g">
+<div class="dv-olabel"><a class="dv-oid" href="#1g">1g</a><span class="dv-oname">Matches &mdash; map + carousel</span></div>
+<x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" dark="{{ true }}" hint-size="402px,874px">
+<div style="height:100%;position:relative;overflow:hidden;background:#0a0712;box-sizing:border-box;font-family:'Inter',sans-serif;color:#f6f3fa">
+<div style="position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.09) 1px,transparent 1px);background-size:22px 22px;background-color:#120b1c"></div>
+<div style="position:absolute;top:180px;left:120px;width:16px;height:16px;border-radius:50%;background:#f5b545;box-shadow:0 0 22px rgba(245,181,69,0.9)"></div>
+<div style="position:absolute;top:280px;left:230px;width:14px;height:14px;border-radius:50%;background:rgba(255,255,255,0.5);box-shadow:0 0 14px rgba(255,255,255,0.4)"></div>
+<div style="position:absolute;top:340px;left:70px;width:14px;height:14px;border-radius:50%;background:rgba(255,255,255,0.5);box-shadow:0 0 14px rgba(255,255,255,0.4)"></div>
+<div style="position:absolute;top:66px;left:24px;right:24px;padding:14px 18px;border-radius:16px;background:rgba(20,13,32,0.75);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.1);font-size:13px;color:rgba(246,243,250,0.7)">3 spots match your vibe near you</div>
+<div style="position:absolute;left:0;right:0;bottom:36px;display:flex;gap:14px;padding:0 20px;overflow:hidden">
+<div style="flex:0 0 250px;border-radius:20px;overflow:hidden;background:#160f21;border:1px solid rgba(255,255,255,0.08);box-shadow:0 16px 40px rgba(0,0,0,0.5)">
+<div style="height:120px;position:relative;background:repeating-linear-gradient(45deg,#241a30,#241a30 10px,#1b1327 10px,#1b1327 20px)"><div style="position:absolute;top:10px;left:10px;padding:5px 11px;border-radius:999px;background:rgba(245,181,69,0.92);color:#1a0f00;font-weight:800;font-size:11.5px">96% match</div></div>
+<div style="padding:14px"><div style="font-weight:700;font-size:15px">Paradiso</div><div style="font-size:12px;color:rgba(246,243,250,0.5);margin-top:3px">Lounge &middot; LES &middot; 0.3 mi</div></div>
+</div>
+<div style="flex:0 0 250px;border-radius:20px;overflow:hidden;background:#160f21;border:1px solid rgba(255,255,255,0.08);opacity:0.55">
+<div style="height:120px;background:repeating-linear-gradient(45deg,#241a30,#241a30 10px,#1b1327 10px,#1b1327 20px)"></div>
+<div style="padding:14px"><div style="font-weight:700;font-size:15px">Sona</div><div style="font-size:12px;color:rgba(246,243,250,0.5);margin-top:3px">Nightclub &middot; 0.6 mi</div></div>
+</div>
+</div>
+</div>
+</x-import>
+</div>
+
+<div class="dv-opt" id="1h">
+<div class="dv-olabel"><a class="dv-oid" href="#1h">1h</a><span class="dv-oname">Trending feed</span></div>
+<x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" dark="{{ true }}" hint-size="402px,874px">
+<div style="height:100%;position:relative;overflow:hidden;background:#0a0712;box-sizing:border-box;font-family:'Inter',sans-serif;color:#f6f3fa">
+<div style="height:100%;overflow:auto">
+<div style="padding:66px 24px 14px"><div style="font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#f5b545">NYC</div><div style="font-family:'Unbounded',sans-serif;font-weight:600;font-size:22px;margin-top:4px">Trending tonight</div></div>
+<div style="padding:6px 24px 100px;display:flex;flex-direction:column;gap:16px">
+
+<div style="padding:16px;border-radius:18px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08)">
+<div style="display:flex;align-items:center;gap:10px"><div style="width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#a855f7,#f5b545)"></div><div style="flex:1"><div style="font-size:13px;font-weight:600">jules_nyc</div><div style="font-size:11px;color:rgba(246,243,250,0.4)">at Sona &middot; 12m ago</div></div><span style="padding:5px 10px;border-radius:999px;background:rgba(245,181,69,0.15);color:#ffd27a;font-size:10.5px">packed</span></div>
+<div style="font-size:14px;line-height:1.5;margin-top:12px;color:rgba(246,243,250,0.9)">Sona is packed tonight, line already around the block by 11.</div>
+<div style="margin-top:12px;height:130px;border-radius:12px;background:repeating-linear-gradient(45deg,#241a30,#241a30 10px,#1b1327 10px,#1b1327 20px);position:relative"><div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;color:rgba(246,243,250,0.3)">venue photo</div></div>
+<div style="display:flex;gap:18px;margin-top:12px;font-size:12px;color:rgba(246,243,250,0.5)"><span>&hearts; 38</span><span>&#9998; 6</span></div>
+</div>
+
+<div style="padding:16px;border-radius:18px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08)">
+<div style="display:flex;align-items:center;gap:10px"><div style="width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#f5b545,#a855f7)"></div><div style="flex:1"><div style="font-size:13px;font-weight:600">marcus.k</div><div style="font-size:11px;color:rgba(246,243,250,0.4)">at Le Bain &middot; 40m ago</div></div><span style="padding:5px 10px;border-radius:999px;background:rgba(255,255,255,0.08);font-size:10.5px">chill</span></div>
+<div style="font-size:14px;line-height:1.5;margin-top:12px;color:rgba(246,243,250,0.9)">Rooftop&rsquo;s calm right now, good for a first date convo before it fills up.</div>
+<div style="display:flex;gap:18px;margin-top:12px;font-size:12px;color:rgba(246,243,250,0.5)"><span>&hearts; 12</span><span>&#9998; 2</span></div>
+</div>
+
+</div>
+</div>
+<div style="position:absolute;right:20px;bottom:26px;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#f5b545,#ffb020);display:flex;align-items:center;justify-content:center;font-size:26px;color:#1a0f00;box-shadow:0 0 26px rgba(245,181,69,0.5)">+</div>
+</div>
+</x-import>
+</div>
+
+<div class="dv-opt" id="1i">
+<div class="dv-olabel"><a class="dv-oid" href="#1i">1i</a><span class="dv-oname">Venue detail</span></div>
+<x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" dark="{{ true }}" hint-size="402px,874px">
+<div style="height:100%;overflow:auto;background:#0a0712;box-sizing:border-box;font-family:'Inter',sans-serif;color:#f6f3fa">
+<div style="height:260px;position:relative;overflow:hidden;background:repeating-linear-gradient(45deg,#241a30,#241a30 12px,#1b1327 12px,#1b1327 24px)">
+<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:11px;color:rgba(246,243,250,0.3)">venue photo</div>
+<div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,7,18,0.15),rgba(10,7,18,0.95))"></div>
+<div style="position:absolute;top:66px;left:20px;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.1);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center">&larr;</div>
+<div style="position:absolute;top:66px;right:20px;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.1);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center">&hearts;</div>
+</div>
+<div style="padding:0 24px;margin-top:-40px;position:relative">
+<div style="display:flex;justify-content:space-between;align-items:flex-start">
+<div><div style="font-family:'Unbounded',sans-serif;font-weight:600;font-size:24px">Sona</div><div style="font-size:13px;color:rgba(246,243,250,0.55);margin-top:4px">Nightclub &middot; Chelsea &middot; $$$</div></div>
+<div style="padding:8px 14px;border-radius:999px;background:linear-gradient(135deg,#f5b545,#ffb020);color:#1a0f00;font-weight:800;font-size:13px;white-space:nowrap">94% match</div>
+</div>
+<div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">
+<span style="padding:6px 12px;border-radius:999px;background:rgba(255,255,255,0.08);font-size:11.5px">Good for dancing</span>
+<span style="padding:6px 12px;border-radius:999px;background:rgba(255,255,255,0.08);font-size:11.5px">High-energy</span>
+<span style="padding:6px 12px;border-radius:999px;background:rgba(255,255,255,0.08);font-size:11.5px">Groups</span>
+</div>
+<div style="display:flex;gap:10px;margin-top:20px">
+<div style="flex:1;padding:14px;border-radius:14px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);text-align:center"><div style="font-size:11px;color:rgba(246,243,250,0.45)">Tonight</div><div style="font-size:13px;font-weight:700;margin-top:4px;color:#ffd27a">Busy</div></div>
+<div style="flex:1;padding:14px;border-radius:14px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);text-align:center"><div style="font-size:11px;color:rgba(246,243,250,0.45)">Cover</div><div style="font-size:13px;font-weight:700;margin-top:4px">$20</div></div>
+<div style="flex:1;padding:14px;border-radius:14px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);text-align:center"><div style="font-size:11px;color:rgba(246,243,250,0.45)">Line</div><div style="font-size:13px;font-weight:700;margin-top:4px">15 min</div></div>
+</div>
+<div style="margin-top:22px"><div style="font-size:13px;font-weight:700;margin-bottom:6px">Crowd tonight</div><div style="font-size:13px;line-height:1.6;color:rgba(246,243,250,0.6)">Dressed-up 25&ndash;32 crowd, high energy on the main floor, DJ sets from 11pm.</div></div>
+<div style="margin-top:20px;padding-bottom:110px"><div style="font-size:13px;font-weight:700;margin-bottom:6px">Music tonight</div><div style="display:flex;gap:8px"><span style="padding:6px 12px;border-radius:999px;background:rgba(168,85,247,0.18);border:1px solid #a855f7;font-size:11.5px;color:#c9a6ff">House</span><span style="padding:6px 12px;border-radius:999px;background:rgba(255,255,255,0.06);font-size:11.5px">Techno</span></div></div>
+</div>
+<div style="position:sticky;bottom:0;left:0;right:0;padding:16px 24px 30px;background:linear-gradient(to top,#0a0712 70%,transparent);display:flex;gap:10px">
+<div style="flex:1;text-align:center;padding:15px;border-radius:999px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.14);font-weight:600;font-size:14px">Save</div>
+<div style="flex:2;text-align:center;padding:15px;border-radius:999px;background:linear-gradient(135deg,#f5b545,#ffb020);color:#1a0f00;font-weight:700;font-size:14px;box-shadow:0 0 26px rgba(245,181,69,0.4)">Get directions</div>
+</div>
+</div>
+</x-import>
+</div>
+
+<div class="dv-opt" id="1j">
+<div class="dv-olabel"><a class="dv-oid" href="#1j">1j</a><span class="dv-oname">Profile &amp; saved spots</span></div>
+<x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" dark="{{ true }}" hint-size="402px,874px">
+<div style="height:100%;overflow:auto;background:#0a0712;box-sizing:border-box;font-family:'Inter',sans-serif;color:#f6f3fa">
+<div style="padding:66px 24px 20px;display:flex;align-items:center;gap:14px">
+<div style="width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,#a855f7,#f5b545)"></div>
+<div><div style="font-family:'Unbounded',sans-serif;font-weight:600;font-size:19px">Alex Rivera</div><div style="font-size:12px;color:rgba(246,243,250,0.45);margin-top:3px">Member since Sept &lsquo;25</div></div>
+</div>
+<div style="padding:0 24px;display:flex;gap:10px">
+<div style="flex:1;padding:14px;border-radius:14px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);text-align:center"><div style="font-family:'Unbounded',sans-serif;font-weight:700;font-size:20px;color:#f5b545">27</div><div style="font-size:11px;color:rgba(246,243,250,0.45);margin-top:3px">Nights out</div></div>
+<div style="flex:1;padding:14px;border-radius:14px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);text-align:center"><div style="font-family:'Unbounded',sans-serif;font-weight:700;font-size:20px;color:#f5b545">9</div><div style="font-size:11px;color:rgba(246,243,250,0.45);margin-top:3px">Saved spots</div></div>
+<div style="flex:1;padding:14px;border-radius:14px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);text-align:center"><div style="font-family:'Unbounded',sans-serif;font-weight:700;font-size:20px;color:#f5b545">6</div><div style="font-size:11px;color:rgba(246,243,250,0.45);margin-top:3px">Wk streak</div></div>
+</div>
+<div style="padding:22px 24px 0">
+<div style="font-size:13px;font-weight:700;margin-bottom:10px">Your vibe profile</div>
+<div style="display:flex;gap:8px;flex-wrap:wrap">
+<span style="padding:7px 13px;border-radius:999px;background:rgba(245,181,69,0.15);color:#ffd27a;font-size:12px">High-energy</span>
+<span style="padding:7px 13px;border-radius:999px;background:rgba(168,85,247,0.15);color:#c9a6ff;font-size:12px">Dancing</span>
+<span style="padding:7px 13px;border-radius:999px;background:rgba(255,255,255,0.06);font-size:12px">$$&ndash;$$$</span>
+</div>
+</div>
+<div style="padding:22px 24px 0">
+<div style="font-size:13px;font-weight:700;margin-bottom:10px">Saved spots</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+<div><div style="height:88px;border-radius:14px;background:repeating-linear-gradient(45deg,#241a30,#241a30 8px,#1b1327 8px,#1b1327 16px)"></div><div style="font-size:12.5px;font-weight:600;margin-top:6px">Sona</div></div>
+<div><div style="height:88px;border-radius:14px;background:repeating-linear-gradient(45deg,#241a30,#241a30 8px,#1b1327 8px,#1b1327 16px)"></div><div style="font-size:12.5px;font-weight:600;margin-top:6px">Le Bain</div></div>
+</div>
+</div>
+<div style="padding:26px 24px 40px;display:flex;flex-direction:column;gap:1px;border-radius:16px;overflow:hidden;margin-top:22px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08)">
+<div style="padding:15px 16px;display:flex;justify-content:space-between;font-size:14px;border-bottom:1px solid rgba(255,255,255,0.06)"><span>Notification preferences</span><span style="color:rgba(246,243,250,0.3)">&rsaquo;</span></div>
+<div style="padding:15px 16px;display:flex;justify-content:space-between;font-size:14px;border-bottom:1px solid rgba(255,255,255,0.06)"><span>Re-run vibe check</span><span style="color:rgba(246,243,250,0.3)">&rsaquo;</span></div>
+<div style="padding:15px 16px;display:flex;justify-content:space-between;font-size:14px"><span>Account &amp; privacy</span><span style="color:rgba(246,243,250,0.3)">&rsaquo;</span></div>
+</div>
+</div>
+</x-import>
+</div>
+
+</div>
+<p class="dv-next">Try next: "make <a href="#1e">1e</a> the main match flow and drop the others" &middot; "combine <a href="#1c">1c</a>'s dial with <a href="#1f">1f</a>'s list" &middot; "add a sign-up / login screen"</p>
+</section>
+
+</x-dc>
+</body>
+</html>
